@@ -1,5 +1,6 @@
 package snakeladder.service
 
+import snakeladder.constants.Constants
 import snakeladder.models.Player
 import snakeladder.models.Position
 
@@ -21,7 +22,7 @@ class MovementService(
             var pseudoPosition = Position(projectedPosition)
             println("You reached to the position $projectedPosition")
 
-            if (!playersService.isPlayerHome(currentPlayer)) {
+            if (playersService.isEligibleToMove(currentPlayer)) {
 
                 val positionAfterSnakeBite =
                     snakesService.positionAfterCheckingForSnakeBite(Position(projectedPosition))

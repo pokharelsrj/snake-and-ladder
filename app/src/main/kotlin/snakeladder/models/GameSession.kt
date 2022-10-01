@@ -31,11 +31,12 @@ class GameSession(
         setItemValues()
 
         while (playersService.getRemainingPlayers() > Constants.MINIMUM_NUMBER_OF_PLAYER_BEFORE_GAME_ENDS) {
-            val rolledValue = dice.rollTheDice()
 
             val currentPlayer = playersService.getCurrentPlayer()
 
             val userInput: Char = scanner.nextLine().toCharArray()[0]
+
+            val rolledValue = dice.rollTheDice()
 
             if (InputValidator().isValid(userInput))
                 movementService.makeMove(currentPlayer, rolledValue)

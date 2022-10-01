@@ -13,6 +13,9 @@ class PlayersService(
         return player.position.value == board.getBoardSize()
     }
 
+    fun isEligibleToMove(player: Player): Boolean {
+        return player.position.value <= board.getBoardSize()
+    }
     fun getRemainingPlayers(): Int = players.size
 
     fun setPlayers(players: Queue<Player>) {
@@ -26,6 +29,7 @@ class PlayersService(
 
     fun getCurrentPlayer(): Player {
         val currentPlayer = players.poll()
+        println()
         println("Player ID: ${currentPlayer.playerId}'s turn to roll the dice. Press any button.")
         return currentPlayer
     }

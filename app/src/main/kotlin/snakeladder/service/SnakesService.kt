@@ -1,16 +1,15 @@
 package snakeladder.service
 
+import snakeladder.models.Board
 import snakeladder.models.Position
 import snakeladder.models.Snake
 import java.util.ArrayList
 
-class SnakesService(
-    private val snakes: ArrayList<Snake>
+open class SnakesService(
+    private val board: Board
 ) {
-
-
     private fun isThereASnakeIn(currentPosition: Position): Snake? {
-        snakes.forEach {
+        board.getSnakes().forEach {
             if (it.startPosition == currentPosition) {
                 println("Oops... A Snake")
                 return it

@@ -3,7 +3,7 @@ package snakeladder.models
 import java.util.Random
 
 class Dice() {
-    private val MIN_DICE_VALUE = 0
+    private val MIN_DICE_VALUE = 1
     private val MAX_DICE_VALUE = 6
 
     fun rollTheDice(): Int {

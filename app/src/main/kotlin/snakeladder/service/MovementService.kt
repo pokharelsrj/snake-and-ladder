@@ -5,12 +5,12 @@ import snakeladder.models.Player
 import snakeladder.models.Position
 
 class MovementService(
-    private val laddersService: LaddersService,
-    private val snakesService: SnakesService,
-    private val skipsService: SkipsService
+    board: Board
 ) {
 
-    private val board = Board(10)
+    private val laddersService = LaddersService(board)
+    private val snakesService = SnakesService(board)
+    private val skipsService = SkipsService(board)
     private val boardSize = board.getBoardSize()
 
     fun makeMove(
@@ -22,7 +22,7 @@ class MovementService(
 
             val projectedPosition = currentPosition.value + rolledValue
 
-            var pseudoPosition: Position = Position(projectedPosition)
+            var pseudoPosition = Position(projectedPosition)
             println("You reached to the position $projectedPosition")
 
             if (projectedPosition < boardSize) {

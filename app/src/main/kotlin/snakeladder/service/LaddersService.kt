@@ -3,13 +3,13 @@ package snakeladder.service
 import snakeladder.models.Ladder
 import snakeladder.models.Position
 
-open class LaddersService(
-) {
+class LaddersService {
     private var ladders = ArrayList<Ladder>()
 
     fun setLadders(ladders: ArrayList<Ladder>) {
         this.ladders = ladders
     }
+
     private fun isThereASnakeIn(currentPosition: Position): Ladder? {
         ladders.forEach {
             if (it.startPosition == currentPosition) {

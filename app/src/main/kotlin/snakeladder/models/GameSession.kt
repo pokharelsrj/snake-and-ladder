@@ -34,11 +34,10 @@ class GameSession(
 
             val currentPlayer = playersService.getCurrentPlayer()
 
-            val userInput: Char = scanner.nextLine().toCharArray()[0]
+            scanner.next().toCharArray()[0]
 
             val rolledValue = dice.rollTheDice()
 
-            if (InputValidator().isValid(userInput))
                 movementService.makeMove(currentPlayer, rolledValue)
 
             if (playersService.isPlayerHome(currentPlayer))

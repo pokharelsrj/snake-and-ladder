@@ -2,6 +2,7 @@ package snakeladder.service
 
 import snakeladder.models.Board
 import snakeladder.models.Player
+import snakeladder.models.Position
 import java.util.*
 
 class PlayersService(
@@ -13,8 +14,8 @@ class PlayersService(
         return player.position.value == board.getBoardSize()
     }
 
-    fun isEligibleToMove(player: Player): Boolean {
-        return player.position.value <= board.getBoardSize()
+    fun isEligibleToMove(currentPosition: Position): Boolean {
+        return currentPosition.value <= board.getBoardSize()
     }
     fun getRemainingPlayers(): Int = players.size
 

@@ -22,7 +22,7 @@ class MovementService(
             var pseudoPosition = Position(projectedPosition)
             println("You reached to the position $projectedPosition")
 
-            if (playersService.isEligibleToMove(currentPlayer)) {
+            if (playersService.isEligibleToMove(pseudoPosition)) {
 
                 val positionAfterSnakeBite =
                     snakesService.positionAfterCheckingForSnakeBite(Position(projectedPosition))

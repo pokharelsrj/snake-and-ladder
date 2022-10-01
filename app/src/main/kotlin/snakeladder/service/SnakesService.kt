@@ -3,7 +3,6 @@ package snakeladder.service
 import snakeladder.models.Board
 import snakeladder.models.Position
 import snakeladder.models.Snake
-import java.util.ArrayList
 
 open class SnakesService(
     private val board: Board

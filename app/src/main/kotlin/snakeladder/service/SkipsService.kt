@@ -1,9 +1,8 @@
 package snakeladder.service
 
+import snakeladder.constants.Constants
 import snakeladder.models.Board
 import snakeladder.models.Player
-
-private const val NUMBER_OF_TURNS_TO_BE_SKIPPED = 3
 
 class SkipsService(
     private val board: Board
@@ -40,7 +39,7 @@ class SkipsService(
     }
 
     private fun setSkipInitially(player: Player) {
-        skipMap[player] = NUMBER_OF_TURNS_TO_BE_SKIPPED
+        skipMap[player] = Constants.NUMBER_OF_TURNS_TO_BE_SKIPPED
     }
 
 }

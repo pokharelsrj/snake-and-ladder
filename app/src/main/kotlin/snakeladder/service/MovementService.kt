@@ -7,7 +7,6 @@ import snakeladder.models.Position
 class MovementService(
     board: Board
 ) {
-
     private val laddersService = LaddersService(board)
     private val snakesService = SnakesService(board)
     private val skipsService = SkipsService(board)

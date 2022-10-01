@@ -20,7 +20,7 @@ class MovementService(
             val projectedPosition = currentPosition.value + rolledValue
 
             var pseudoPosition = Position(projectedPosition)
-            println("You reached to the position $projectedPosition")
+            println("You reached to the position " + Constants.ANSI_PURPLE + "$projectedPosition" + Constants.ANSI_RESET)
 
             if (playersService.isEligibleToMove(pseudoPosition)) {
 
@@ -36,7 +36,7 @@ class MovementService(
 
                 currentPlayer.position = pseudoPosition
             } else {
-                println("You have to try again")
+                println(Constants.ANSI_YELLOW + "You have to try again" + Constants.ANSI_RESET)
             }
         }
     }

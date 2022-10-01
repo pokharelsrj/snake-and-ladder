@@ -1,5 +1,6 @@
 package snakeladder.service
 
+import snakeladder.constants.Constants
 import snakeladder.models.Board
 import snakeladder.models.Player
 import snakeladder.models.Position
@@ -17,6 +18,7 @@ class PlayersService(
     fun isEligibleToMove(currentPosition: Position): Boolean {
         return currentPosition.value <= board.getBoardSize()
     }
+
     fun getRemainingPlayers(): Int = players.size
 
     fun setPlayers(players: Queue<Player>) {
@@ -31,7 +33,7 @@ class PlayersService(
     fun getCurrentPlayer(): Player {
         val currentPlayer = players.poll()
         println()
-        println("Player ID: ${currentPlayer.playerId}'s turn to roll the dice. Press any button.")
+        println(Constants.ANSI_GREEN + "${currentPlayer.name}'s " + Constants.ANSI_RESET + "turn to roll the dice. Press any button.")
         return currentPlayer
     }
 }

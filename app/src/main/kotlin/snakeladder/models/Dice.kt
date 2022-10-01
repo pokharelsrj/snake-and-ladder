@@ -12,6 +12,6 @@ class Dice {
     }
 
     private fun printRolledValue(rolledValue: Int) {
-        println("You rolled $rolledValue in the dice")
+        println("You rolled " + Constants.ANSI_CYAN + "$rolledValue" + Constants.ANSI_RESET + " in the dice")
     }
 }

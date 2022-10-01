@@ -38,7 +38,7 @@ class GameSession(
 
             val rolledValue = dice.rollTheDice()
 
-                movementService.makeMove(currentPlayer, rolledValue)
+            movementService.makeMove(currentPlayer, rolledValue)
 
             if (playersService.isPlayerHome(currentPlayer))
                 currentPlayer.printHomeMessage()

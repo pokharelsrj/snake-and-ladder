@@ -17,9 +17,4 @@ class PlayersService(
         println("Player ID: ${currentPlayer.playerId}'s turn to roll the dice. Press any button.")
         return currentPlayer
     }
-
-    fun skipPlayerTurn() {
-        val currentPlayer = getCurrentPlayer()
-        addCurrentPlayerToQueue(currentPlayer)
-    }
 }

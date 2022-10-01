@@ -3,7 +3,7 @@ package snakeladder.models
 import snakeladder.constants.Constants
 import java.util.Random
 
-class Dice() {
+class Dice {
     fun rollTheDice(): Int {
         val rolledValue =
             Random().nextInt(Constants.MAX_DICE_VALUE - Constants.MIN_DICE_VALUE + 1) + Constants.MIN_DICE_VALUE

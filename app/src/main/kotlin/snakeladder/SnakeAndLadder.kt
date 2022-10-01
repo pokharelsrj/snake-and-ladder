@@ -1,5 +1,6 @@
 package snakeladder
 
+import snakeladder.constants.Constants
 import snakeladder.models.Board
 import snakeladder.models.Dice
 import snakeladder.models.Ladder
@@ -18,7 +19,7 @@ import java.util.*
 class SnakeAndLadder {
     private val scanner = Scanner(System.`in`)
     private val dice = Dice()
-    private val board = Board(10)
+    private val board = Board(Constants.BOARD_DIMENSION)
 
     private val players: Queue<Player> = LinkedList()
     private val movementService = MovementService(board)
@@ -29,7 +30,7 @@ class SnakeAndLadder {
         initializeBoard()
         initializePlayer()
 
-        while (players.size > 1) {
+        while (players.size > Constants.MINIMUM_NUMBER_OF_PLAYER_BEFORE_GAME_ENDS) {
             val rolledValue = dice.rollTheDice()
 
             val currentPlayer = playerService.getCurrentPlayer()
@@ -46,7 +47,7 @@ class SnakeAndLadder {
         }
     }
 
-    fun initializeBoard() {
+    private fun initializeBoard() {
         board.setSnakes(
             Snake(
                 Position(3),
@@ -75,7 +76,7 @@ class SnakeAndLadder {
         )
     }
 
-    fun initializePlayer() {
+    private fun initializePlayer() {
         players.add(
             Player(1)
         )

@@ -3,9 +3,7 @@
  */
 package snakeladder
 
-import snakeladder.service.MovementService
-
 fun main() {
-    SnakeAndLadder().start()
+    SnakeAndLadder().beginGame()
 }
 

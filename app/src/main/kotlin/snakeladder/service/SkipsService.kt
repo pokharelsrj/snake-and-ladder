@@ -1,15 +1,20 @@
 package snakeladder.service
 
 import snakeladder.constants.Constants
-import snakeladder.models.Board
 import snakeladder.models.Player
+import snakeladder.models.Skip
 
 class SkipsService(
-    private val board: Board
 ) {
+    private var skips = ArrayList<Skip>()
     private val skipMap = HashMap<Player, Int>()
+
+    fun setSkips(skips: ArrayList<Skip>) {
+        this.skips = skips
+    }
+
     fun checkForSkip(player: Player): Boolean {
-        board.getSkips().forEach {
+        skips.forEach {
             if (it.position == player.position) {
                 return performSkipOperation(player)
             }

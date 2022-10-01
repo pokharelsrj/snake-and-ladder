@@ -1,7 +1,6 @@
 package snakeladder.models
 
 import snakeladder.constants.Constants
-import snakeladder.service.InputValidator
 import snakeladder.service.LaddersService
 import snakeladder.service.MovementService
 import snakeladder.service.PlayersService
